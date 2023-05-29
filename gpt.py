@@ -1,19 +1,26 @@
-import os
 import openai
-
+from img2txt.img2txt import img2txt
 
 #Open API key
-openai.api_key = "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"
+openai.api_key = "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"
 
-#GPT에게 물어볼 질문
-question = "Desccribe the sound of " + input("What to ask?") + "in a sentence, without visual expression and emphasize on audio expression."
+if __name__=='__main__':
 
-#GPT에게 질문
-completion = openai.ChatCompletion.create(
-    model = "gpt-3.5-turbo",
-    messages= [
-        {"role": "user", "content": question}
-    ]
-)
+    #이미지 파일 주소 받기
+    imgdir = input("Please pass me a file path of image : ")
+    
+    #img2txt 변환
+    text = img2txt(imgdir)
+    
+    #GPT에게 물어볼 질문
+    question = "Desccribe the atmosphere of " + text + "emphasizing on audio expression."
 
-print(completion.choices[0].message.content)
+    #GPT에게 질문
+    completion = openai.ChatCompletion.create(
+            model = "gpt-3.5-turbo",
+            messages= [
+                {"role": "user", "content": question}
+            ]
+        )
+    
+    print(completion.choices[0].message.content)
