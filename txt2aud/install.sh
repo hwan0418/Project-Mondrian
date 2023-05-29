@@ -15,3 +15,5 @@ pip install torchlibrosa==0.0.9
 pip install transformers
 pip install progressbar
 pip install ftfy
+pip install diffusers
+
