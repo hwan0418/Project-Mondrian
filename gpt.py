@@ -10,7 +10,7 @@ def askgpt(result):
     weather = result[2]
 
     # GPT에게 물어볼 질문
-    question = "Desccribe the atmosphere of " + feature + "in" + weather + place + "emphasizing on audio expression."
+    question = "Desccribe the atmosphere of " + feature + "in" + place + "on" + weather + "day, emphasizing on audio expression."
 
     # GPT에게 질문
     completion = openai.ChatCompletion.create(
