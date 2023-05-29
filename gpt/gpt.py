@@ -1,10 +1,7 @@
 import openai
-from img2txt.img2txt import caption
-
-#Open API key
-openai.api_key = "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"
 
 def askgpt(result):
+    openai.api_key = input("Paste your openai API_key")
     feature = result[0]
     place = result[1]
     weather = result[2]
