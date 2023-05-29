@@ -4,10 +4,7 @@ from img2txt.img2txt import caption
 #Open API key
 openai.api_key = "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"
 
-def askgpt(imgdir):
-
-    # img2txt 변환
-    result = caption(imgdir)
+def askgpt(result):
     feature = result[0]
     place = result[1]
     weather = result[2]
