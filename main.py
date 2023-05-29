@@ -1,7 +1,7 @@
 from img2txt.img2txt import caption
 from txt2aud.txt2aud import txt2aud
 from scipy.io.wavfile import write
-from gpt import askgpt
+from gpt.gpt import askgpt
 
 if __name__ == '__main__':
 
