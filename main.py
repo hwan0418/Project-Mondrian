@@ -1,4 +1,4 @@
-from img2txt.img2txt import img2txt
+from img2txt.img2txt import caption
 from txt2aud.txt2aud import txt2aud
 from scipy.io.wavfile import write
 from gpt import askgpt
@@ -7,7 +7,7 @@ if __name__ == '__main__':
 
     imgdir = input("Please pass me a file path of image : ")
 
-    text = img2txt(imgdir)
+    text = caption(imgdir)
 
     text_improved = askgpt(text)
 
